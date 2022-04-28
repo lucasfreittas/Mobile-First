@@ -1,0 +1,228 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+    --darket-purple: #23053A;
+    --dark-purple: #4A4E69;
+    --light-purple: #CBC0D3;
+    --light-gray: #8E9AAF;
+    --light-pink: #FEEAFA;
+    --light-blue: #EFF1FF;
+    --txt-font: 'Palanquin', sans-serif;
+    --title-font: 'Staatliches', 'cursive';
+
+}
+
+body{
+    font-family: var(--title-font);
+    font-family: var(--txt-font);
+    background-color: var(--light-blue)
+}
+
+header{
+    padding: 3.5rem 0 ;
+    text-align: center;
+
+    background-color: var(--light-gray);
+ 
+}
+
+.logo{
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+header h1{
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    font-family: var(--title-font);
+    color: white;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    margin-top: 4rem;
+    padding: 1rem 0;
+
+    background-color: var(--light-purple)
+}
+
+.page-container{
+    padding: 1.5rem 3.5rem 6rem;
+}
+
+.page-container p {
+    text-align: center;
+    font-family: var(--txt-font);
+    color: var(--darker-purple);
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-bottom: 5rem;   
+}
+
+.cards-container{
+    width: 32rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 3rem
+}
+
+.card img{
+    border-radius: 2rem;
+    margin: auto;
+    animation: down-up 600ms 200ms ease-in-out backwards;
+
+}
+
+
+.card{
+
+    width: 32rem;
+ 
+    margin: auto;
+    position: relative;
+}
+
+.card h2{
+    position: absolute;
+    z-index: 500;
+    
+    background-color: var(--light-pink);
+
+    border-radius: 2rem;
+    width: 11.2rem;
+    height: 3.5rem;
+
+    text-align: center;
+    font-family: var(--title-font);
+    font-size: 2.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+    font-weight: normal;
+    color: var(--dark-purple);
+
+    right: 2rem;
+    top: 2rem;
+
+    animation: up-down 600ms 400ms ease-in-out backwards;
+}
+
+.desktop-only{
+    display: none;
+}
+
+
+
+
+/*------------------ANIMATIONS----------------*/
+
+@keyframes up-down{
+
+    0%{
+        opacity: 0;
+        transform: translateY(-3rem);
+
+}
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes down-up{
+
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+
+}
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*-----------------------MEDIA-------------*/
+
+@media (min-width: 1280px){
+
+body{
+    display: flex;
+
+}
+
+header{
+    width: 37rem;
+    height: 100vh;
+}
+
+.desktop-only{
+    display: block;
+}
+
+.page-container p {
+    display: none 
+}
+
+
+header p{
+
+    text-align: center;
+    font-family: var(--txt-font);
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 4rem;   
+
+    text-align: center;
+    padding: 0 3rem;
+
+}
+
+.page-container{
+    width: 100vw;
+    margin: auto;
+    padding: 5rem 8rem ;
+}
+
+.card{
+}
+
+.cards-container{
+    width: 100%;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "A B C"
+    "D B F"
+    "D E F";
+}
+
+.cards-container div:nth-child(1){
+    grid-area: A;
+}
+.cards-container div:nth-child(2){
+    grid-area: C;
+}
+.cards-container div:nth-child(3){
+    grid-area: B;
+}
+.cards-container div:nth-child(4){
+    grid-area: E;
+}
+.cards-container div:nth-child(5){
+    grid-area: D;
+}
+.cards-container div:nth-child(6){
+    grid-area: F;
+}
+
+
+}
