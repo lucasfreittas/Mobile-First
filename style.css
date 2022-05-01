@@ -536,8 +536,8 @@ footer{
         font-family: var(--txt-font);
         color: white;
         font-weight: 400;
-        font-size: 1.8rem;
-        line-height: 2.2rem;
+        font-size: clamp(2rem, 2.5rem, 3rem);
+        line-height: clamp(2.5rem, 3rem, 3rem);
         margin-top: 4rem;   
     
         text-align: center;
@@ -546,7 +546,7 @@ footer{
     }
     
     .page-container{
-        max-width: 60%;
+        max-width: 100%;
        display: flex;
        flex-direction: column;
         margin: 0px auto;
@@ -555,17 +555,16 @@ footer{
     }
     
     .card{
-        width: 100%;
+        width: clamp(22rem+1vw, 30rem, 50rem);
     }
     
     a img{
-        width: 100%;
+        width: clamp(22rem+1vw, 30rem, 50rem);
         object-fit: cover;
     }
     
     .cards-container{
         margin: 6rem auto;
-        width: 100%;
         display: grid;
         justify-content:center ;
         gap: 3rem;
